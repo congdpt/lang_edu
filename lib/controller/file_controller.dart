@@ -70,22 +70,22 @@ class FileManager {
     File file = await _jsonCategoryFile;
 
     if (await file.exists()) {
-      try {
-        fileContent = await file.readAsString();
-        if (fileContent.isNotEmpty) {
-          var dataJson = json.decode(fileContent);
-          List<Category> listCategory = [];
-          for (var item in dataJson) {
-            Category newCateg = Category.fromJson(item);
-            listCategory.add(newCateg);
-          }
-          return listCategory;
-        } else {
-          return [];
+      // try {
+      fileContent = await file.readAsString();
+      if (fileContent.isNotEmpty) {
+        var dataJson = json.decode(fileContent);
+        List<Category> listCategory = [];
+        for (var item in dataJson) {
+          Category newCateg = Category.fromJson(item);
+          listCategory.add(newCateg);
         }
-      } catch (e) {
+        return listCategory;
+      } else {
         return [];
       }
+      // } catch (e) {
+      //   return [];
+      // }
     }
     return [];
   }

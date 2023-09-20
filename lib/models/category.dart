@@ -8,7 +8,9 @@ class Category {
   });
 
   factory Category.fromJson(Map<String, dynamic> json) {
-    return Category(id: json['id'] as int, name: json['name'] as String);
+    return Category(
+        id: json.containsKey('id') ? json['id'] : 0,
+        name: json.containsKey('name') ? json['name'] : '');
   }
 
   Map toJson() => {

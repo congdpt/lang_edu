@@ -4,53 +4,29 @@ import 'package:lang_edu/views/float_button_category.dart';
 import '../models/category.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({super.key});
-
+  CategoryPage({super.key, required this.listCategory});
+  List<Category> listCategory = [];
   @override
   State<CategoryPage> createState() => _CategoryPageState();
 }
 
-List<Category> listCategory = [];
-
 class _CategoryPageState extends State<CategoryPage> {
   Future<void> computeFuture = Future.value();
 
-  Future<void> _readCategory() async {
-    if (listCategory.isEmpty) {
-      try {
-        // if (data_value.toString().isEmpty) {
-        listCategory = await FileManager().readCategoryFile();
-        // }
-      } catch (e) {
-        debugPrint("Couldn't read file");
-      }
-      setState(() {
-        listCategory;
-      });
-    }
-  }
-
   void _addCategory(String name) {
-    int newID = listCategory.length + 1;
+    int newID = widget.listCategory.length + 1;
     final newCateg = Category(id: newID, name: name);
     setState(() {
-      listCategory.add(newCateg);
+      widget.listCategory.add(newCateg);
     });
-    FileManager().writeJsonCategoryFile(listCategory);
+    FileManager().writeJsonCategoryFile(widget.listCategory);
   }
 
   void _removeCategory(int id) {
     setState(() {
-      listCategory.removeWhere((item) => item.id == id);
+      widget.listCategory.removeWhere((item) => item.id == id);
     });
-    FileManager().writeJsonCategoryFile(listCategory);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    // Call the readJson method when the app starts
-    _readCategory();
+    FileManager().writeJsonCategoryFile(widget.listCategory);
   }
 
   @override
@@ -65,6 +41,9 @@ class _CategoryPageState extends State<CategoryPage> {
             children: [
               const Text(''),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 8.0,
+                    backgroundColor: const Color.fromRGBO(235, 235, 247, 1)),
                 child: const Text('Add new Category',
                     style: TextStyle(fontWeight: FontWeight.w800)),
                 onPressed: () {
@@ -84,9 +63,10 @@ class _CategoryPageState extends State<CategoryPage> {
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Column(
-              children: listCategory.isNotEmpty
-                  ? listCategory
-                      .map((e) => vocabularyItem(e, listCategory.indexOf(e)))
+              children: widget.listCategory.isNotEmpty
+                  ? widget.listCategory
+                      .map((e) =>
+                          vocabularyItem(e, widget.listCategory.indexOf(e)))
                       .toList()
                   : [const Text('Please add new Category')],
             ),
@@ -102,8 +82,8 @@ class _CategoryPageState extends State<CategoryPage> {
       height: 60,
       decoration: BoxDecoration(
           color: index % 2 == 1
-              ? const Color.fromRGBO(239, 239, 248, 20)
-              : const Color.fromRGBO(170, 158, 158, 165),
+              ? const Color.fromRGBO(253, 242, 246, 1)
+              : const Color.fromRGBO(237, 233, 224, 1),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: const Color.fromARGB(255, 201, 200, 200))),
       child: Padding(

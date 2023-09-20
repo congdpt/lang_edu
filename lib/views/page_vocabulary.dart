@@ -16,10 +16,13 @@ List<Vocabulary> allListVocabulary = [];
 List<Category> listCategObj = [];
 List<String> listCateg = [];
 String dropdownFirstValue = '';
+int maxIDVocabulary = 0;
 
 dynamic dataValue;
 
 class _VocabularyPageState extends State<VocabularyPage> {
+  final _formKey = GlobalKey<FormState>();
+
   Future<void> _readVocabulary() async {
     if (listVocabulary.isEmpty) {
       // try {
@@ -53,10 +56,17 @@ class _VocabularyPageState extends State<VocabularyPage> {
 
   void _addNewWord(
       String name, String mean, String categName, String currentCateg) async {
-    int newID = allListVocabulary.length + 1;
+    for (var vocab in allListVocabulary) {
+      if (vocab.id > maxIDVocabulary) {
+        maxIDVocabulary = vocab.id;
+      }
+    }
+    maxIDVocabulary += 1;
+    // int newID = allListVocabulary.length + 1;
     // listCategObj = await FileManager().readCategoryFile();
     int categID = Category.getIDbyName(listCategObj, categName);
-    final newWord = Vocabulary('', categID, id: newID, name: name, mean: mean);
+    final newWord =
+        Vocabulary('', categID, id: maxIDVocabulary, name: name, mean: mean);
     await Vocabulary.fetchWorData(newWord);
     allListVocabulary.add(newWord);
     FileManager().writeJsonVocabularyFile(allListVocabulary);
@@ -107,7 +117,9 @@ class _VocabularyPageState extends State<VocabularyPage> {
                         value: value, label: value);
                   }).toList()),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(elevation: 8.0),
+                style: ElevatedButton.styleFrom(
+                    elevation: 8.0,
+                    backgroundColor: const Color.fromRGBO(235, 235, 247, 1)),
                 onPressed: () {
                   showModalBottomSheet(
                       context: context,
@@ -143,59 +155,36 @@ class _VocabularyPageState extends State<VocabularyPage> {
   Container vocabularyItem(Vocabulary item, int index) {
     return Container(
       width: double.infinity,
-      height: 60,
+      height: 50,
       decoration: BoxDecoration(
-          color: (item.status != 'draft')
+          color: (item.status == 'draft')
               ? (index % 2 == 1
-                  ? const Color.fromRGBO(239, 239, 248, 20)
-                  : const Color.fromRGBO(170, 158, 158, 165))
+                  ? const Color.fromRGBO(235, 235, 247, 1)
+                  : const Color.fromRGBO(227, 239, 247, 1))
               : (index % 2 == 1
-                  ? const Color.fromRGBO(255, 222, 233, 247)
-                  : const Color.fromRGBO(255, 234, 246, 230)),
+                  ? const Color.fromRGBO(253, 242, 246, 1)
+                  : const Color.fromRGBO(237, 233, 224, 1)),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: const Color.fromARGB(255, 201, 200, 200))),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Column(
-            children: [
-              Row(
-                children: [
-                  Text(
-                    item.name,
-                    style: const TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87),
-                  ),
-                  const Text('  '),
-                  Text(
-                    item.phonetic.isNotEmpty ? item.phonetic.toString() : '',
-                    style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.green),
-                  )
-                ],
-              ),
-              Text(
-                item.mean,
-                style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.grey),
-              )
-            ],
+          InkWell(
+            onTap: () async {
+              await showVocabularyDetails(item);
+            },
+            child: Text(
+              item.name,
+              style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87),
+            ),
           ),
           InkWell(
             onTap: () {
               _removeWord(item.id);
-              // onTap: () async {
-              //   if (await confirm(context)) {
-              //     return _removeWord(item.id);
-              //   }
-              //   return;
             },
             child: const Icon(
               Icons.delete_outline,
@@ -205,5 +194,74 @@ class _VocabularyPageState extends State<VocabularyPage> {
         ]),
       ),
     );
+  }
+
+  Future<void> showVocabularyDetails(Vocabulary item) {
+    return showDialog<void>(
+        context: context,
+        builder: (context) => AlertDialog(
+              backgroundColor: const Color.fromRGBO(217, 229, 198, 1),
+              content: Stack(
+                clipBehavior: Clip.none,
+                children: <Widget>[
+                  Positioned(
+                    right: -40,
+                    top: -40,
+                    child: InkResponse(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.red,
+                        child: Icon(Icons.close),
+                      ),
+                    ),
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Text(
+                            item.name,
+                            style: const TextStyle(
+                                fontSize: 28, fontWeight: FontWeight.w800),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Text(
+                            item.mean,
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w100),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: item.phonetic.map<Text>((List item) {
+                                return Text(item[0]);
+                              }).toList()),
+                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8),
+                        //   child: ElevatedButton(
+                        //     child: const Text('Submitß'),
+                        //     onPressed: () {
+                        //       if (_formKey.currentState!.validate()) {
+                        //         _formKey.currentState!.save();
+                        //       }
+                        //     },
+                        //   ),
+                        // )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ));
   }
 }

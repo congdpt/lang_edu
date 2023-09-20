@@ -10,7 +10,8 @@ class Vocabulary {
   final String description;
   final int categID;
   late String status = 'draft';
-  late List<String> phonetic = [];
+  late List<List<dynamic>> phonetic = [];
+  late List<String> audio = [];
 
   Vocabulary(
     this.description,
@@ -20,15 +21,18 @@ class Vocabulary {
     required this.mean,
   });
 
-  factory Vocabulary.fromJson(Map<String, dynamic> json) {
-    debugPrint(json.toString());
-    String phonetic = json['phonetic'];
-    Vocabulary newVocab = Vocabulary('', json['categID'] as int,
-        id: json['id'] as int,
-        name: json['name'] as String,
-        mean: json['mean'] as String);
+  factory Vocabulary.fromJson(Map<String, dynamic> jsonValue) {
+    Vocabulary newVocab = Vocabulary(
+        '', jsonValue.containsKey('categID') ? jsonValue['categID'] : 0,
+        id: jsonValue.containsKey('id') ? jsonValue['id'] : 0,
+        name: jsonValue.containsKey('name') ? jsonValue['name'] : '',
+        mean: jsonValue.containsKey('mean') ? jsonValue['mean'] : '');
     newVocab.status = 'draft';
-    newVocab.phonetic = phonetic.isNotEmpty ? phonetic.split('-') : [];
+    if (jsonValue.containsKey('phonetic')) {
+      for (var i = 0; i < jsonValue['phonetic'].length; i++) {
+        newVocab.phonetic.add(jsonValue['phonetic'][i]);
+      }
+    }
     return newVocab;
   }
 
@@ -38,7 +42,7 @@ class Vocabulary {
         'name': name,
         'categID': categID,
         'status': status,
-        'phonetic': phonetic.join('-')
+        'phonetic': phonetic,
       };
 
   static List<Vocabulary> getVocabularybyCategID(
@@ -67,9 +71,17 @@ class Vocabulary {
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response, then parse the JSON.
       Map<String, dynamic> jsonWord = json.decode(response.body)[0];
-      if (jsonWord.containsKey('phonetic')) {
-        debugPrint(jsonWord['phonetic']);
-        newWord.phonetic.add(jsonWord['phonetic']);
+      if (jsonWord.containsKey('phonetics')) {
+        for (Map<String, dynamic> item in jsonWord['phonetics']) {
+          List<dynamic> newPhonetic = [];
+          item.containsKey('text')
+              ? newPhonetic.add(item['text'])
+              : newPhonetic.add('');
+          item.containsKey('audio')
+              ? newPhonetic.add(item['audio'])
+              : newPhonetic.add('');
+          newWord.phonetic.add(newPhonetic);
+        }
       }
     } else {
       // If the server did not return a 200 OK response

@@ -1,77 +1,1081 @@
 [
     {
         "id": 1,
-        "nameVi": "Con Kien",
-        "nameEn": "Ant"
+        "mean": "Ca sĩ",
+        "name": "Singer",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈsɪŋə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/singer-1-us.mp3"
+            ]
+        ]
     },
     {
         "id": 2,
-        "nameVi": "Con Buom",
-        "nameEn": "Butterfly"
+        "mean": "Đàn ghi ta",
+        "name": "Guitar",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ɡɪˈtɑː(ɹ)/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/guitar-uk.mp3"
+            ],
+            [
+                "/ɡɪˈtɑɹ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/guitar-us.mp3"
+            ]
+        ]
     },
     {
         "id": 3,
-        "nameVi": "Con Gau",
-        "nameEn": "Bear"
+        "mean": "Diễn viên nam",
+        "name": "Actor",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈæk.tə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/actor-uk.mp3"
+            ],
+            [
+                "/ˈæk.tɚ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/actor-us.mp3"
+            ]
+        ]
     },
     {
         "id": 4,
-        "nameVi": "Con Meo",
-        "nameEn": "Cat"
+        "mean": "Diễn viên nữ",
+        "name": "Actress",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈak.tɹəs/",
+                ""
+            ],
+            [
+                "/ˈæk.tɹəs/",
+                ""
+            ]
+        ]
     },
     {
         "id": 5,
-        "nameVi": "Con Ga",
-        "nameEn": "Chicken"
+        "mean": "Ca hát",
+        "name": "Sing",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/sɪŋ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/sing-uk.mp3"
+            ],
+            [
+                "/sɪŋ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/sing-us.mp3"
+            ]
+        ]
     },
     {
         "id": 6,
-        "nameVi": "Con Cho",
-        "nameEn": "Dog"
+        "mean": "Bài hát",
+        "name": "Song",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/sɒŋ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/song-us.mp3"
+            ]
+        ]
     },
     {
         "id": 7,
-        "nameVi": "Con Vit",
-        "nameEn": "Duck"
+        "mean": "Vở kịch",
+        "name": "Play",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/pleɪ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/play-us.mp3"
+            ]
+        ]
     },
     {
         "id": 8,
-        "nameVi": "Con Voi",
-        "nameEn": "Elephant"
+        "mean": "Đàn Piano",
+        "name": "Piano",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/piˈænoʊ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/piano-1-uk.mp3"
+            ]
+        ]
     },
     {
         "id": 9,
-        "nameVi": "Con Ca",
-        "nameEn": "Fish"
+        "mean": "Sáo",
+        "name": "Flute",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/fluːt/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/flute-us.mp3"
+            ]
+        ]
     },
     {
         "id": 10,
-        "nameVi": "Con Ngua",
-        "nameEn": "Horse"
+        "mean": "Kèn",
+        "name": "Trumpet",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈtɹʌmpɪt/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/trumpet-us.mp3"
+            ]
+        ]
     },
     {
         "id": 11,
-        "nameVi": "Con Su Tu",
-        "nameEn": "Lion"
+        "mean": "Đau đầu",
+        "name": "Headache",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈhɛdeɪk/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/headache-us.mp3"
+            ]
+        ]
     },
     {
         "id": 12,
-        "nameVi": "Con Chuot",
-        "nameEn": "Mouse"
+        "mean": "Làm tổn thương",
+        "name": "Injure",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɪndʒə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/injure-us.mp3"
+            ]
+        ]
     },
     {
         "id": 13,
-        "nameVi": "Con Cu",
-        "nameEn": "Owl"
+        "mean": "Nạn nhân",
+        "name": "Victim",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈvɪktəm/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/victim-us.mp3"
+            ]
+        ]
     },
     {
         "id": 14,
-        "nameVi": "Con Ran",
-        "nameEn": "Snake"
+        "mean": "Đau răng",
+        "name": "Toothache",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈtuθˌeɪk/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/toothache-us.mp3"
+            ]
+        ]
     },
     {
         "id": 15,
-        "nameVi": "Con Cop",
-        "nameEn": "Tiger"
+        "mean": "Bác sĩ",
+        "name": "Doctor",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈdɒktə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/doctor-uk.mp3"
+            ],
+            [
+                "/ˈdɑktɚ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/doctor-us.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 16,
+        "mean": "Y tá",
+        "name": "Nurse",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/nɜːs/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/nurse-us.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 17,
+        "mean": "Phòng khám",
+        "name": "Clinic",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈklɪnɪk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 18,
+        "mean": "Thuốc con nhộng",
+        "name": "Capsule",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈkæpsjuːl/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 19,
+        "mean": "Thuốc viên nén",
+        "name": "Pill",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/pɪl/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/pill-uk.mp3"
+            ],
+            [
+                "/pɪl/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/pill-us.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 21,
+        "mean": "Bệnh viện",
+        "name": "Hospital",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈhɒs.pɪ.tl̩/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/hospital-uk.mp3"
+            ],
+            [
+                "/ˈhɑs.pɪ.tl̩/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/hospital-us.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 23,
+        "mean": "Máy tính để bàn",
+        "name": "Desktop",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "[ˈdɛsk.ˌtɔp]",
+                ""
+            ],
+            [
+                "[ˈdɛsk.ˌtɒp]",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 23,
+        "mean": "Máy vi tính",
+        "name": "Computer",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/kəmˈpjuːtə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/computer-uk.mp3"
+            ],
+            [
+                "/kəmˈpjutɚ/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/computer-us.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 24,
+        "mean": "Máy tính bảng",
+        "name": "Tablet",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈtæblət/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 25,
+        "mean": "Chuột máy tính",
+        "name": "Mouse",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 26,
+        "mean": "Bàn phím",
+        "name": "Keyboard",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈkiːbɔːd/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 27,
+        "mean": "Dây cáp",
+        "name": "Cable",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/keɪ.bl/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 28,
+        "mean": "Màn hình",
+        "name": "Screen",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/skɹiːn/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 29,
+        "mean": "Máy tính xách tay",
+        "name": "Laptop",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈlæp.tɒp/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 30,
+        "mean": "Màn hình",
+        "name": "Monitor",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈmɒnɨtə/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 31,
+        "mean": "Ứng dụng",
+        "name": "Application",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/aplɪˈkeɪʃ(ə)n/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 32,
+        "mean": "Phím tắt",
+        "name": "Shortcut",
+        "categID": 3,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈʃɔːtkʌt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 33,
+        "mean": "Trình diễn",
+        "name": "Show",
+        "categID": 5,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ʃəʊ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 35,
+        "mean": "Xe tải",
+        "name": "Truck",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/tɹʌk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 36,
+        "mean": "Kiến trúc sư",
+        "name": "Architect",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɑːkɪtɛkt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 37,
+        "mean": "Thợ xây",
+        "name": "Builder",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈbɪl.də/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 38,
+        "mean": "Toà nhà",
+        "name": "Building",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈbɪl.dɪŋ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 39,
+        "mean": "Xi măng",
+        "name": "Cement",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/səˈmɛnt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 40,
+        "mean": "Cát",
+        "name": "Sand",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/sænd/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 41,
+        "mean": "Bê tông",
+        "name": "Concrete",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/kɵnˈkɹiːt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 42,
+        "mean": "Thang máy",
+        "name": "Elevator",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɛl.ə.veɪ.tɚ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 43,
+        "mean": "Sàn nhà",
+        "name": "Floor",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/flɔː/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 44,
+        "mean": "Giáo viên",
+        "name": "Teacher",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈtiːt͡ʃə/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 45,
+        "mean": "Học sinh",
+        "name": "Student",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈstjuː.dənt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 46,
+        "mean": "Trường học",
+        "name": "School",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/skuːl/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 47,
+        "mean": "Lớp học",
+        "name": "Classroom",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈklɑːsɹʊm/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 48,
+        "mean": "Cây thước",
+        "name": "Ruler",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɹuːlə(ɹ)/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 49,
+        "mean": "Bút mực",
+        "name": "Pen",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/pɛn/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 50,
+        "mean": "Bút chì",
+        "name": "Pencil",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈpɛnsɪl/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 51,
+        "mean": "Bàn học",
+        "name": "Desk",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/dɛsk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 52,
+        "mean": "Cái ghế",
+        "name": "Chair",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/t͡ʃɛə(ɹ)/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 53,
+        "mean": "Thứ hạng",
+        "name": "Rank",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ɹæŋk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 54,
+        "mean": "Cục tẩy",
+        "name": "Eraser",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ɪˈɹeɪzə/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 55,
+        "mean": "Quyển vở",
+        "name": "Notebook",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈnəʊtˌbʊk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 56,
+        "mean": "Cuốn sách",
+        "name": "Book",
+        "categID": 1,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/buːk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 57,
+        "mean": "Con mèo",
+        "name": "Cat",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/kat/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 58,
+        "mean": "Con chó",
+        "name": "Dog",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/dɑɡ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 59,
+        "mean": "Con voi",
+        "name": "Elephant",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɛləfənt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 60,
+        "mean": "Con chuột",
+        "name": "Mouse",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 61,
+        "mean": "Con trâu",
+        "name": "Buffalo",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈbʌf.əl.əʊ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 62,
+        "mean": "Con bò",
+        "name": "Cow",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/kaʊ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 63,
+        "mean": "Con bò đực",
+        "name": "Ox",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 64,
+        "mean": "Con cọp",
+        "name": "Tiger",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈtaɪɡə/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 65,
+        "mean": "Con sư tử",
+        "name": "Lion",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈlaɪən/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 66,
+        "mean": "Con rồng",
+        "name": "Dragon",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈdɹæɡən/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 67,
+        "mean": "Con thỏ",
+        "name": "Rabbit",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɹæbət/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 68,
+        "mean": "Con rắn",
+        "name": "Snake",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈsneɪk/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 69,
+        "mean": "Con ngựa",
+        "name": "Horse",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/hɔːs/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 70,
+        "mean": "Con dê",
+        "name": "Goat",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ɡɐ̟ʉt/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 71,
+        "mean": "Con cừu",
+        "name": "Sheep",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ʃiːp/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 72,
+        "mean": "Con khỉ",
+        "name": "Monkey",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈmʌŋki/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 74,
+        "mean": "Con gà trống",
+        "name": "Roost",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ɹuːst/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 74,
+        "mean": "Con gà",
+        "name": "Chicken",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈt͡ʃɪkɪn/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 75,
+        "mean": "Con gà mái",
+        "name": "Hen",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/hɛn/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 76,
+        "mean": "Con lợn/ con heo",
+        "name": "Pig",
+        "categID": 6,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈpɪɡ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 77,
+        "mean": "Băng ca",
+        "name": "Stretcher",
+        "categID": 4,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈstɹɛtʃə/",
+                ""
+            ],
+            [
+                "/ˈstɹɛtʃɚ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 34,
+        "mean": "Xe lu",
+        "name": "Roller",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈɹəʊlə/",
+                ""
+            ],
+            [
+                "/ˈɹoʊlɚ/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 78,
+        "mean": "Thợ ống nước",
+        "name": "Plumber",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈplʌmə/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/plumber-uk.mp3"
+            ]
+        ]
+    },
+    {
+        "id": 20,
+        "mean": "Thợ Hàn",
+        "name": "Welder",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/ˈwɛldə(ɹ)/",
+                ""
+            ]
+        ]
+    },
+    {
+        "id": 79,
+        "mean": "Thợ phụ",
+        "name": "Mate",
+        "categID": 2,
+        "status": "draft",
+        "phonetic": [
+            [
+                "/meɪt/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/mate-au.mp3"
+            ],
+            [
+                "/meiʔ/",
+                ""
+            ],
+            [
+                "/meɪt/",
+                "https://api.dictionaryapi.dev/media/pronunciations/en/mate-us.mp3"
+            ]
+        ]
     }
 ]

@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lang_edu/controller/file_controller.dart';
+import 'package:lang_edu/models/category.dart';
 import 'views/page_category.dart';
 import 'views/page_revew.dart';
 import 'views/page_vocabulary.dart';
-
-List<StatefulWidget> menuItemPage = <StatefulWidget>[
-  const VocabularyPage(),
-  const ReviewPage(),
-  const CategoryPage(),
-];
 
 const List<Tab> menuItemIcon = <Tab>[
   Tab(text: 'Vocabulary'),
@@ -34,12 +30,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  List<Category> listCategory = [];
+
+  Future<void> _readCategory() async {
+    if (listCategory.isEmpty) {
+      try {
+        // if (data_value.toString().isEmpty) {
+        listCategory = await FileManager().readCategoryFile();
+        // }
+      } catch (e) {
+        debugPrint("Couldn't read file");
+      }
+      // setState(() {
+      //   listCategory;
+      // });
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
     _tabController.addListener(_handleTabIndex);
+    _readCategory();
   }
 
   @override
@@ -57,7 +70,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return MaterialApp(
       // theme: ThemeData.light(useMaterial3: true),
-      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      theme: ThemeData(primarySwatch: Colors.lightBlue),
       home: DefaultTabController(
           length: menuItemIcon.length,
           child: Builder(builder: (BuildContext context) {
@@ -85,9 +98,11 @@ class _HomePageState extends State<HomePage>
                 ),
                 body: TabBarView(
                   controller: _tabController,
-                  children: menuItemPage.map((page) {
-                    return page;
-                  }).toList(),
+                  children: [
+                    const VocabularyPage(),
+                    const ReviewPage(),
+                    CategoryPage(listCategory: listCategory),
+                  ],
                 ),
               ),
             );
