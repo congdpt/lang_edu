@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Education"
+    },
+    {
+        "id": 2,
+        "name": "Contruction"
+    },
+    {
+        "id": 3,
+        "name": "Techncial"
+    },
+    {
+        "id": 4,
+        "name": "Medical"
+    },
+    {
+        "id": 5,
+        "name": "Musical"
+    }
+]

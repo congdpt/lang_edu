@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "nameVi": "Con Kien",
+        "nameEn": "Ant"
+    },
+    {
+        "id": 2,
+        "nameVi": "Con Buom",
+        "nameEn": "Butterfly"
+    },
+    {
+        "id": 3,
+        "nameVi": "Con Gau",
+        "nameEn": "Bear"
+    },
+    {
+        "id": 4,
+        "nameVi": "Con Meo",
+        "nameEn": "Cat"
+    },
+    {
+        "id": 5,
+        "nameVi": "Con Ga",
+        "nameEn": "Chicken"
+    },
+    {
+        "id": 6,
+        "nameVi": "Con Cho",
+        "nameEn": "Dog"
+    },
+    {
+        "id": 7,
+        "nameVi": "Con Vit",
+        "nameEn": "Duck"
+    },
+    {
+        "id": 8,
+        "nameVi": "Con Voi",
+        "nameEn": "Elephant"
+    },
+    {
+        "id": 9,
+        "nameVi": "Con Ca",
+        "nameEn": "Fish"
+    },
+    {
+        "id": 10,
+        "nameVi": "Con Ngua",
+        "nameEn": "Horse"
+    },
+    {
+        "id": 11,
+        "nameVi": "Con Su Tu",
+        "nameEn": "Lion"
+    },
+    {
+        "id": 12,
+        "nameVi": "Con Chuot",
+        "nameEn": "Mouse"
+    },
+    {
+        "id": 13,
+        "nameVi": "Con Cu",
+        "nameEn": "Owl"
+    },
+    {
+        "id": 14,
+        "nameVi": "Con Ran",
+        "nameEn": "Snake"
+    },
+    {
+        "id": 15,
+        "nameVi": "Con Cop",
+        "nameEn": "Tiger"
+    }
+]
