@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:lang_edu/controller/file_controller.dart';
 import 'package:lang_edu/views/float_button_category.dart';
@@ -37,7 +39,7 @@ class _CategoryPageState extends State<CategoryPage> {
           padding:
               const EdgeInsets.only(left: 20, top: 8, bottom: 8, right: 20),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(''),
               ElevatedButton(

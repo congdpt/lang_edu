@@ -18,10 +18,10 @@ class Category {
         'name': name,
       };
 
-  static List<String> getName(List<Category> listCateg) {
-    List<String> listName = [];
+  static Map<int, String> getName(List<Category> listCateg) {
+    Map<int, String> listName = {};
     for (var item in listCateg) {
-      listName.add(item.name);
+      listName[item.id] = item.name;
     }
     return listName;
   }
