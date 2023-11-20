@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lang_edu/controller/file_controller.dart';
-import 'package:lang_edu/models/category.dart';
-import 'package:lang_edu/models/vocabulary.dart';
-import 'views/page_category.dart';
-import 'views/page_revew.dart';
-import 'views/page_vocabulary.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'controller/file_controller.dart';
+import 'models/category.dart';
+import 'models/vocabulary.dart';
+import 'views/page/category_screen.dart';
+import 'views/page/revew_screen.dart';
+import 'views/page/vocabulary_screen.dart';
+import 'views/value/app_theme.dart';
 
 const List<Tab> menuItemIcon = <Tab>[
   Tab(text: 'Review'),
@@ -12,13 +15,59 @@ const List<Tab> menuItemIcon = <Tab>[
   Tab(text: 'Category')
 ];
 
-void main() => runApp(MaterialApp(
-      title: "Lang Edu",
-      home: const HomePage(),
+class StaticVariable extends ChangeNotifier {
+  static List<Category> listCategory = [];
+  static List<String> listCateg = [];
+  static Map<int, String> categMapData = {};
+  static List<Vocabulary> allListVocabulary = [];
+}
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  ).then(
+    (_) => runApp(
+      const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Theme.of(context);
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData.light(useMaterial3: true),
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
-    ));
+      title: 'Login and Register UI',
+      theme: AppTheme.themeData,
+      initialRoute: AppRoutes.loginScreen,
+      navigatorKey: AppConstants.navigationKey,
+      routes: {
+        AppRoutes.loginScreen: (context) => const LoginPage(),
+        AppRoutes.registerScreen: (context) => const RegisterPage(),
+      },
+    );
+  }
+}
+
+// void main() => runApp(ChangeNotifierProvider(
+//       create: (context) => StaticVariable(),
+//       child: MaterialApp(
+//         title: "Lang Edu",
+//         home: const HomePage(),
+//         debugShowCheckedModeBanner: false,
+//         // theme: ThemeData.light(useMaterial3: true),
+//         theme: ThemeData(primarySwatch: Colors.deepOrange),
+//       ),
+//     ));
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,18 +79,30 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  // late TabController _tabController;
   int menuIndex = 0;
-  List<Category> listCategory = [];
-  List<String> listCateg = [];
-  List<Vocabulary> allListVocabulary = [];
+
+  static const drawerHeader = UserAccountsDrawerHeader(
+    accountName: Text(
+      'Amy Yang',
+    ),
+    accountEmail: Text(
+      'amy.huynhtrang@gmail.com',
+    ),
+    currentAccountPicture: CircleAvatar(
+      child: FlutterLogo(size: 42.0),
+    ),
+  );
 
   fetchData() async {
-    if (listCategory.isEmpty) {
+    if (StaticVariable.listCategory.isEmpty) {
       try {
-        listCategory = await FileManager().readCategoryFile();
-        allListVocabulary = await FileManager().readVocabularyFile();
-        listCateg = Category.getName(listCategory).values.toList();
+        StaticVariable.listCategory = await FileManager().readCategoryFile();
+        StaticVariable.allListVocabulary =
+            await FileManager().readVocabularyFile();
+        StaticVariable.listCateg =
+            Category.getName(StaticVariable.listCategory).values.toList();
+        StaticVariable.categMapData =
+            Category.getName(StaticVariable.listCategory);
         setState(() {});
       } catch (e) {
         debugPrint("Couldn't read file");
@@ -52,85 +113,12 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    // _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
-    // _tabController.addListener(() {
-    //   setState(() {});
-    // });
     fetchData();
   }
 
   @override
-  void dispose() {
-    debugPrint('Tao tab dispose ne!');
-    // _tabController.removeListener(() {
-    //   setState(() {});
-    // });
-    // _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // return DefaultTabController(
-    //     length: menuItemIcon.length,
-    //     child: Builder(builder: (BuildContext context) {
-    //       final TabController tabController = DefaultTabController.of(context);
-    //       tabController.addListener(() {
-    //         if (!tabController.indexIsChanging) {
-    //           // Your code goes here.
-    //           // To get index of current tab use tabController.index
-    //         }
-    //       });
-    //       return SafeArea(
-    //         maintainBottomViewPadding: false,
-    //         top: false,
-    //         bottom: false,
-    //         child: Scaffold(
-    //           appBar: PreferredSize(
-    //             preferredSize: const Size.fromHeight(48.0),
-    //             child: AppBar(
-    //               title: const Text("Lang Edu"),
-    //               backgroundColor: Colors.cyan,
-    //               bottom: TabBar(
-    //                 tabs: menuItemIcon,
-    //                 controller: _tabController,
-    //               ),
-    //             ),
-    //           ),
-    //           body: FutureBuilder(
-    //               future: fetchData(),
-    //               builder: (context, snapshot) {
-    //                 return TabBarView(
-    //                   controller: _tabController,
-    //                   children: [
-    //                     ReviewPage(
-    //                         allListVocabulary: allListVocabulary,
-    //                         listCategory: listCategory,
-    //                         listCategStr: listCateg),
-    //                     VocabularyPage(
-    //                         allListVocabulary: allListVocabulary,
-    //                         listCategory: listCategory,
-    //                         listCategStr: listCateg),
-    //                     CategoryPage(listCategory: listCategory),
-    //                   ],
-    //                 );
-    //               }),
-    //           drawer: const Drawer(),
-    //         ),
-    //       );
-    //     }));
-
-    const drawerHeader = UserAccountsDrawerHeader(
-      accountName: Text(
-        'Amy Yang',
-      ),
-      accountEmail: Text(
-        'amy.huynhtrang@gmail.com',
-      ),
-      currentAccountPicture: CircleAvatar(
-        child: FlutterLogo(size: 42.0),
-      ),
-    );
+    // fetchData();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -141,16 +129,10 @@ class _HomePageState extends State<HomePage>
         container: true,
         child: Center(
           child: (menuIndex == 1)
-              ? VocabularyPage(
-                  allListVocabulary: allListVocabulary,
-                  listCategory: listCategory,
-                  listCategStr: listCateg)
+              ? const VocabularyPage()
               : (menuIndex == 2)
-                  ? CategoryPage(listCategory: listCategory)
-                  : ReviewPage(
-                      allListVocabulary: allListVocabulary,
-                      listCategory: listCategory,
-                      listCategStr: listCateg),
+                  ? const CategoryPage()
+                  : const ReviewPage(),
         ),
       ),
       drawer: Drawer(
@@ -163,8 +145,9 @@ class _HomePageState extends State<HomePage>
               ),
               leading: const Icon(Icons.rate_review),
               onTap: () {
-                menuIndex = 0;
-                setState(() {});
+                setState(() {
+                  menuIndex = 0;
+                });
                 Navigator.pop(context);
               },
             ),
@@ -174,8 +157,9 @@ class _HomePageState extends State<HomePage>
               ),
               leading: const Icon(Icons.wordpress),
               onTap: () {
-                menuIndex = 1;
-                setState(() {});
+                setState(() {
+                  menuIndex = 1;
+                });
                 Navigator.pop(context);
               },
             ),
@@ -185,8 +169,9 @@ class _HomePageState extends State<HomePage>
               ),
               leading: const Icon(Icons.category),
               onTap: () {
-                menuIndex = 2;
-                setState(() {});
+                setState(() {
+                  menuIndex = 2;
+                });
                 Navigator.pop(context);
               },
             ),

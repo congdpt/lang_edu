@@ -27,7 +27,8 @@ class Vocabulary {
         id: jsonValue.containsKey('id') ? jsonValue['id'] : 0,
         name: jsonValue.containsKey('name') ? jsonValue['name'] : '',
         mean: jsonValue.containsKey('mean') ? jsonValue['mean'] : '');
-    newVocab.status = 'draft';
+    newVocab.status =
+        jsonValue.containsKey('status') ? jsonValue['status'] : 'draft';
     if (jsonValue.containsKey('phonetic')) {
       for (var i = 0; i < jsonValue['phonetic'].length; i++) {
         newVocab.phonetic.add(jsonValue['phonetic'][i]);

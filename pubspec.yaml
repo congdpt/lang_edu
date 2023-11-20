@@ -41,6 +41,9 @@ dependencies:
   path_provider: ^2.1.1
   http: ^1.1.0
   audioplayers: ^5.1.0
+  flutter_login: ^4.2.1
+  intl: ^0.18.1
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:
